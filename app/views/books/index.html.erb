@@ -1,0 +1,14 @@
+<h1>我的订单</h1>
+
+<div>
+  <%= link_to "创建订单", new_book_path, class: "btn btn-primary" %>
+  <% if logged_in? %>
+    <%= link_to "我的订单", books_user_path(current_user), class: "btn btn-default" %>
+  <% end -%>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= render 'books' %>
+  </div>
+</div>
