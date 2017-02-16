@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Circles
+module Dinners
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -28,15 +28,6 @@ module Circles
       # generator.view_specs false
       # generator.test_framework false
     end
-
-    config.action_mailer.smtp_settings = {
-      :address => "smtp.example.com",
-      :port => 25,
-      :domain => "343edu.com",
-      :user_name => "username",
-      :password => "password",
-      :authentication => :login,
-      :enable_starttls_auto => false
-    }
+    
   end
 end

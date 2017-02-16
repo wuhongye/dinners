@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  before_filter :auth_user, except: [:index, :show]
+  before_filter :auth_user, except: [:show]
 
   def index
     @books = Book.page(params[:page] || 1).per_page(params[:per_page] || 10).
@@ -22,10 +22,6 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-    @book = Book.find params[:id]
-  end
-
   def edit
     @book = current_user.books.find params[:id]
     render action: :new
@@ -45,7 +41,7 @@ class BooksController < ApplicationController
 
   private
   def book_attrs
-    params.require(:book).permit(:title, :content, :is_public, :tags_string)
+    params.require(:book).permit(:name, :meal,  :times , :day , :payer ,:is_public, :tags_string)
   end
 
 end
